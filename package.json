@@ -1,0 +1,23 @@
+{
+  "name": "roleet-reboot",
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "bump": "npx npm-check-updates"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoicBrassart/roleet-reboot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoicBrassart/roleet-reboot/issues"
+  },
+  "homepage": "https://github.com/LoicBrassart/roleet-reboot#readme",
+  "description": ""
+}
