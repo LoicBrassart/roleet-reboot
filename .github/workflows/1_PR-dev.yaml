@@ -18,8 +18,14 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Run unit & integration tests
+      - name: Run frontend tests
         working-directory: frontend
+        run: |
+          npm ci
+          npm run test
+
+      - name: Run backend tests
+        working-directory: backend
         run: |
           npm ci
           npm run test
