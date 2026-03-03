@@ -24,7 +24,18 @@ jobs:
         with:
           node-version: "24"
 
+      - name: Filter changed files
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            frontend:
+              - 'frontend/**'
+            backend:
+              - 'backend/**'
+
       - name: Run ${{ matrix.services }} tests
+        if: ${{ steps.filter.outputs[matrix.services] == 'true' }}
         working-directory: ${{ matrix.services }}
         run: |
           npm ci
