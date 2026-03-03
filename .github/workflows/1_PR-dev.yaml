@@ -9,6 +9,12 @@ on:
 jobs:
   check-touched-services:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        services:
+          - frontend
+          - backend
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,14 +24,8 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Run frontend tests
-        working-directory: frontend
-        run: |
-          npm ci
-          npm run test
-
-      - name: Run backend tests
-        working-directory: backend
+      - name: Run ${{ matrix.services }} tests
+        working-directory: ${{ matrix.services }}
         run: |
           npm ci
           npm run test
