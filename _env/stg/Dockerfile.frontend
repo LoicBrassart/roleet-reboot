@@ -1,12 +1,12 @@
 FROM node:lts-alpine AS builder
 WORKDIR /app
-COPY frontend/*.json .
-COPY frontend/*.html .
-COPY frontend/*.ts .
+COPY ../../frontend/*.json .
+COPY ../../frontend/*.html .
+COPY ../../frontend/*.ts .
 RUN npm install
 RUN npm install -g typescript
-COPY frontend/src/ src/
-COPY frontend/public/ public/
+COPY ../../frontend/src/ src/
+COPY ../../frontend/public/ public/
 RUN ["npm", "run", "build"]
 
 FROM nginx:stable-alpine
