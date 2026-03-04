@@ -1,0 +1,12 @@
+
+server {
+    listen 80;
+
+    location /api {
+        proxy_pass http://backend:${SERVICE_PORT};
+    }
+
+    location / {
+        proxy_pass http://frontend:${SERVICE_PORT};
+    }
+}
