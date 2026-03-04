@@ -4,7 +4,7 @@ COPY *.json .
 RUN npm i
 RUN npm i -g typescript
 COPY src/ .
-RUN tsc
+RUN ["npm", "run", "build"]
 
 FROM node:lts-alpine 
 WORKDIR /app
