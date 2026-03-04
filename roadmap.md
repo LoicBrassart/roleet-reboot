@@ -25,45 +25,50 @@
 
 - tests unit/inté avec Vitest pour chaque conrtainer
 - tests e2e avec Playwright
-  - env GHub
+  - env GHub (complet, pour execution PWright)
 - CI
   - PR>dev
     - lancer les tests unit/inté touched
   - PR>stg
     - lancer tous les tests unit/inté
     - lancer PWright
-
-## Step 4 : Déploiement
-
-- Dockerisation `stg`/`prd`
-- instaurer les environnements sur le vps
-  - dev
-    - git clone du projet
-    - make run dev
-  - stg
-    - compose.yaml
-    - fetch-and-deploy.sh
-  - prd
-- CD
-  - push>dev
-    - ping vps
-      - > git pull
-  - push>stg
+  - push>staging
     - build images
     - images -> DHub
-    - ping vps
-      - > fetch-and-deploy.sh
-  - ? push>prd
-    - ping vps
-      - > fetch-and-deploy.sh
-    - ? créer changelog
-    - ? créer tag
-    - ? créer release
+  - ❌ bouton "MeP !"
+    - créer changelog
+    - créer tag
+    - créer release
+- Dockerisation CI `stg`
+  - Dockerfiles spécifiques (build)
+  - env GHub (de quoi envoyer les images sur DHub)
 
-# Points techniques
+## Step 4 : Déploiement et CD
 
-zustand
-graphql-codegen
-forms (controlled vs non-controlled)
-zod
-react-router
+- installer les environnements sur le vps
+  - dev
+    - .env
+    - git clone du projet
+    - git checkout dev
+    - make run dev
+  - stg
+    - .env
+    - `compose.yaml`
+    - docker compose up
+  - prd
+    - .env
+    - `compose.yaml`
+    - docker compose up
+- configurer les outils du VPS
+  - Caddy
+  - WebHooks
+- CD
+  - push>dev -> ping vps
+    - cd dev
+    - git pull origin dev
+  - push>staging -> ping vps
+    - cd stg
+    - docker compose up
+  - bouton "MeP !" -> ping vps
+    - cd prd
+    - docker compose up
