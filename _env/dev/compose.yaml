@@ -52,8 +52,8 @@ services:
         condition: service_healthy
       backend:
         condition: service_healthy
-      # adminer:
-      #   condition: service_healthy
+      adminer:
+        condition: service_healthy
     environment:
       SERVICE_PORT: ${SERVICE_PORT}
 
@@ -76,4 +76,11 @@ services:
       GATEWAY_PORT: ${GATEWAY_PORT}
     depends_on:
       backend:
+        condition: service_healthy
+
+  adminer:
+    container_name: ${ENV}-database
+    image: adminer
+    depends_on:
+      database:
         condition: service_healthy
