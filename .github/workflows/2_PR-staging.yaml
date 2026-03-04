@@ -56,4 +56,5 @@ jobs:
 
       - name: Teardown E2E environment
         if: always() # Even if tests fail
+        working-directory: _env/e2e/
         run: docker compose down
