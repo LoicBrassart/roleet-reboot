@@ -31,7 +31,7 @@ jobs:
       - name: Build and push images
         uses: docker/build-push-action@v3
         with:
-          context: ./${{ matrix.service }}
+          context: ../../
           file: ./${{ matrix.service }}/Dockerfile.stg
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.APP_NAME }}-${{ matrix.service }}:latest
