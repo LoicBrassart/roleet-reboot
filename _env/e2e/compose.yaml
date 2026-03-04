@@ -2,8 +2,8 @@ services:
   backend:
     container_name: ${ENV}-backend
     build:
-      context: ../../backend
-      dockerfile: Dockerfile.dev
+      context: ../..
+      dockerfile: _env/dev/Dockerfile.backend
     healthcheck:
       test: [
           "CMD-SHELL",
@@ -54,8 +54,8 @@ services:
   frontend:
     container_name: ${ENV}-frontend
     build:
-      context: ../../frontend
-      dockerfile: Dockerfile.dev
+      context: ../..
+      dockerfile: _env/dev/Dockerfile.frontend
     healthcheck:
       test:
         [
@@ -73,8 +73,8 @@ services:
   playwright:
     container_name: ${ENV}-playwright
     build:
-      context: ../../e2e
-      dockerfile: Dockerfile.e2e
+      context: ../../
+      dockerfile: _env/${ENV}/Dockerfile.e2e
     volumes:
       - ./persist/playwright/report:/app/playwright-report
       - ./persist/playwright/results:/app/tests-results
