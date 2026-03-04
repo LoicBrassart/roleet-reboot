@@ -1,8 +1,8 @@
 FROM node:lts-alpine
 WORKDIR /app
 RUN apk --no-cache add curl
-COPY *.json ./
+COPY backend/*.json ./
 RUN npm i
-COPY src src
+COPY backend/src src
 
 CMD ["npm", "run", "dev"]

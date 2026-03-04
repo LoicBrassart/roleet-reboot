@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        services:
+        service:
           - frontend
           - backend
 
@@ -24,8 +24,8 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Run ${{ matrix.services }} tests
-        working-directory: ${{ matrix.services }}
+      - name: Run ${{ matrix.service }} tests
+        working-directory: ${{ matrix.service }}
         run: |
           npm ci
           npm run test

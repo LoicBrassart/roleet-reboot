@@ -32,6 +32,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ../../
-          file: ./${{ matrix.service }}/Dockerfile.stg
+          file: _env/stg/Dockerfile.${{ matrix.service }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.APP_NAME }}-${{ matrix.service }}:latest
