@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        services:
+        service:
           - frontend
           - backend
 
@@ -34,9 +34,9 @@ jobs:
             backend:
               - 'backend/**'
 
-      - name: Run ${{ matrix.services }} tests
-        if: ${{ steps.filter.outputs[matrix.services] == 'true' }}
-        working-directory: ${{ matrix.services }}
+      - name: Run ${{ matrix.service }} tests
+        if: ${{ steps.filter.outputs[matrix.service] == 'true' }}
+        working-directory: ${{ matrix.service }}
         run: |
           npm ci
           npm run test
