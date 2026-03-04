@@ -1,4 +1,6 @@
-# Step 1 : Infrastructure générique
+# Plannification
+
+## Step 1 : Infrastructure générique
 
 - dossier `_env`
 - makefile
@@ -11,7 +13,7 @@
   - ? pull_request_template.md
   - ? CODEOWNERS
 
-# Step 2 : Projet web fullstack générique
+## Step 2 : Projet web fullstack générique
 
 - frontend Vite classique
 - backend GraphQL (requete "health")
@@ -19,19 +21,19 @@
 - Gateway Nginx
 - Dockerisation `dev`
 
-# Step 3 : Tests et CI
+## Step 3 : Tests et CI
 
 - tests unit/inté avec Vitest pour chaque conrtainer
 - tests e2e avec Playwright
-  - env GHub
+  - ▶️ env GHub
 - CI
   - PR>dev
     - lancer les tests unit/inté touched
   - PR>stg
     - lancer tous les tests unit/inté
-    - lancer PWright
+    - ▶️ lancer PWright
 
-# Step 4 : Déploiement
+## Step 4 : Déploiement
 
 - Dockerisation `stg`/`prd`
 - instaurer les environnements sur le vps
@@ -57,3 +59,11 @@
     - ? créer changelog
     - ? créer tag
     - ? créer release
+
+# Points techniques
+
+zustand
+graphql-codegen
+forms (controlled vs non-controlled)
+zod
+react-router
