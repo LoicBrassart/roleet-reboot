@@ -6,9 +6,9 @@ server {
         proxy_pass http://backend:${SERVICE_PORT};
     }
 
-    # location /adminer {
-    #     proxy_pass http://adminer:${SERVICE_PORT};
-    # }
+    location /adminer {
+        proxy_pass http://adminer:${SERVICE_PORT};
+    }
 
     location / {
         proxy_pass http://frontend:${SERVICE_PORT};
