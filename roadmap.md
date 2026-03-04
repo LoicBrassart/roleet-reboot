@@ -25,13 +25,13 @@
 
 - tests unit/inté avec Vitest pour chaque conrtainer
 - tests e2e avec Playwright
-  - ▶️ env GHub
+  - env GHub
 - CI
   - PR>dev
     - lancer les tests unit/inté touched
   - PR>stg
     - lancer tous les tests unit/inté
-    - ▶️ lancer PWright
+    - lancer PWright
 
 ## Step 4 : Déploiement
 
