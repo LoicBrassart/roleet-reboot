@@ -3,7 +3,7 @@ services:
     container_name: ${ENV}-backend
     build:
       context: ../..
-      dockerfile: _env/dev/Dockerfile.backend
+      dockerfile: _env/${ENV}/Dockerfile.backend
     healthcheck:
       test: [
           "CMD-SHELL",
@@ -55,7 +55,7 @@ services:
     container_name: ${ENV}-frontend
     build:
       context: ../..
-      dockerfile: _env/dev/Dockerfile.frontend
+      dockerfile: _env/${ENV}/Dockerfile.frontend
     healthcheck:
       test:
         [
