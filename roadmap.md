@@ -26,6 +26,9 @@
 - tests unit/inté avec Vitest pour chaque conrtainer
 - tests e2e avec Playwright
   - env GHub (complet, pour execution PWright)
+- Dockerisation CI `stg`
+  - Dockerfiles spécifiques (build)
+  - env GHub (de quoi envoyer les images sur DHub)
 - CI
   - PR>dev
     - lancer les tests unit/inté touched
@@ -39,9 +42,6 @@
     - créer changelog
     - créer tag
     - créer release
-- Dockerisation CI `stg`
-  - Dockerfiles spécifiques (build)
-  - env GHub (de quoi envoyer les images sur DHub)
 
 ## Step 4 : Déploiement et CD
 
