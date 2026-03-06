@@ -25,28 +25,28 @@
 
 ```
 # Default
-valhallacode.ovh {
+mydomain.ovh {
         root * /usr/share/caddy
         file_server
 }
 
 # Webhooks
-hooks.valhallacode.ovh {
+hooks.mydomain.ovh {
         reverse_proxy localhost:9000
 }
 
 # DEV du projet Template
-dev.template.valhallacode.ovh {
+dev.template.mydomain.ovh {
         reverse_proxy localhost:8001
 }
 
 # STG du projet Template
-stg.template.valhallacode.ovh {
+stg.template.mydomain.ovh {
         reverse_proxy localhost:8002
 }
 
 # PRD du projet Template
-template.valhallacode.ovh {
+template.mydomain.ovh {
         reverse_proxy localhost:8003
 }
 ```
