@@ -1,0 +1,12 @@
+FROM node:lts-alpine
+WORKDIR /app
+RUN apk --no-cache add curl
+COPY frontend/package*.json ./
+RUN npm i
+COPY frontend/index.html ./
+COPY frontend/tsconfig*.json ./
+COPY frontend/vite.config.ts ./
+COPY frontend/public/ public/
+COPY frontend/src/ src/
+
+CMD ["npm", "run", "dev"]

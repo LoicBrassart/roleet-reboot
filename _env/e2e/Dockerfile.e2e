@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/playwright:v1.58.1-jammy
+WORKDIR /app
+COPY e2e/package.json .
+COPY e2e/playwright.config.ts .
+RUN npm i
+COPY e2e/tests/ ./tests/
+CMD npx playwright test
