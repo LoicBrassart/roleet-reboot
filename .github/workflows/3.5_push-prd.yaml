@@ -1,0 +1,14 @@
+name: Autodeploy prd environment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify prd server
+        run: |
+          curl -X GET https://hooks.valhallacode.ovh/hooks/prd-template
