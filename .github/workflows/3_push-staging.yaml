@@ -39,7 +39,8 @@ jobs:
   notify-server:
     needs: build-and-push
     runs-on: ubuntu-latest
+    environment: builder
     steps:
       - name: Notify staging server
         run: |
-          curl -X GET https://hooks.valhallacode.ovh/hooks/stg-template
+          curl -X GET https://hooks.${{ secrets.DOMAIN_URL }}/hooks/stg-${{ secrets.APP_NAME }}
