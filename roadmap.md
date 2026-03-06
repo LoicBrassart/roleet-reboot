@@ -54,11 +54,11 @@
   - stg
     - .env
     - `compose.yaml`
-    - docker compose up
+    - docker compose up -d
   - prd
     - .env
     - `compose.yaml`
-    - docker compose up
+    - docker compose up -d
 - configurer les outils du VPS
   - Caddy
   - WebHooks
