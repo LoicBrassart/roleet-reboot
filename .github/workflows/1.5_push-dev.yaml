@@ -1,0 +1,14 @@
+name: Autodeploy dev environment
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  notify-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify dev server
+        run: |
+          curl -X GET https://hooks.valhallacode.ovh/hooks/dev-template
